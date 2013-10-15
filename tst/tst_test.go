@@ -37,22 +37,21 @@ func TestNewNode(t *testing.T) {
 	assert.Equal(t, T, tree.Contains("foo"))
 	assert.Equal(t, T, tree.Contains("foob"))
 
-	// TODO
 	//	vals := tree.AllWithPrefix("x", 0)
-	//	assert.Equal(t, 0, len(vals))
-	//
+	//	assert.Equal(t, 0, len(vals), fmt.Sprintf("vals: %q", vals))
+
 	//	vals = tree.AllWithPrefix("xoooooo", 0)
-	//	assert.Equal(t, 0, len(vals))
-	//
+	//	assert.Equal(t, 0, len(vals), fmt.Sprintf("vals: %q", vals))
+
 	//	vals = tree.AllWithPrefix("f", 0)
-	//	assert.Equal(t, 4, len(vals))
-	//
+	//	assert.Equal(t, 4, len(vals), fmt.Sprintf("vals: %q", vals))
+
 	//	vals = tree.AllWithPrefix("fo", 0)
-	//	assert.Equal(t, 3, len(vals))
-	//
+	//	assert.Equal(t, 3, len(vals), fmt.Sprintf("vals: %q", vals))
+
 	//	vals = tree.AllWithPrefix("foo", 0)
-	//	assert.Equal(t, 2, len(vals))
-	//
+	//	assert.Equal(t, 2, len(vals), fmt.Sprintf("vals: %q", vals))
+
 	//	vals = tree.AllWithPrefix("foob", 0)
-	//	assert.Equal(t, 1, len(vals))
+	//	assert.Equal(t, 1, len(vals), fmt.Sprintf("vals: %q", vals))
 }

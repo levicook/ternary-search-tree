@@ -5,31 +5,24 @@ func (root *node) Contains(key string) bool {
 }
 
 func (n *node) contains(runes []rune, level int) bool {
-	var (
-		next *node
-		key  = runes[level]
-	)
+	for {
+		k := runes[level]
 
-	switch {
-	case key < n.key:
-		next = n.lo
-	case key > n.key:
-		next = n.hi
-	case key == n.key:
-		next = n.eq
-	}
+		switch {
+		case k < n.key:
+			n = n.lo
+		case k > n.key:
+			n = n.hi
+		case k == n.key:
+			n = n.eq
+		}
 
-	if next != nil {
-		nextLevel := level + 1
+		level++
 
-		if len(runes) == nextLevel && key == next.key {
-			return next.end
-
-		} else if len(runes) > nextLevel {
-			return next.contains(runes, nextLevel)
-
+		if n == nil || level == len(runes) {
+			break
 		}
 	}
 
-	return false
+	return n != nil && n.end
 }
