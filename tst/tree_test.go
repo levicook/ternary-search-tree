@@ -1,6 +1,7 @@
 package tst
 
 import (
+	"fmt"
 	//"github.com/davecgh/go-spew/spew"
 	"github.com/stretchr/testify/assert"
 	"testing"
@@ -65,14 +66,14 @@ func TestNewNode(t *testing.T) {
 		assert.Equal(t, "foob", tree.Get("foob"))
 	}
 
-	//	vals := tree.AllWithPrefix("x", 0)
-	//	assert.Equal(t, 0, len(vals), fmt.Sprintf("vals: %q", vals))
+	vals := tree.AllWithPrefix("x", 0)
+	assert.Equal(t, 0, len(vals), fmt.Sprintf("vals: %q", vals))
 
-	//	vals = tree.AllWithPrefix("xoooooo", 0)
-	//	assert.Equal(t, 0, len(vals), fmt.Sprintf("vals: %q", vals))
+	vals = tree.AllWithPrefix("xoooooo", 0)
+	assert.Equal(t, 0, len(vals), fmt.Sprintf("vals: %q", vals))
 
-	//	vals = tree.AllWithPrefix("f", 0)
-	//	assert.Equal(t, 4, len(vals), fmt.Sprintf("vals: %q", vals))
+	vals = tree.AllWithPrefix("f", 0)
+	assert.Equal(t, 4, len(vals), fmt.Sprintf("vals: %q", vals))
 
 	//	vals = tree.AllWithPrefix("fo", 0)
 	//	assert.Equal(t, 3, len(vals), fmt.Sprintf("vals: %q", vals))
