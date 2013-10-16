@@ -72,8 +72,8 @@ func TestNewNode(t *testing.T) {
 	vals = tree.AllWithPrefix("xoooooo", 0)
 	assert.Equal(t, 0, len(vals), fmt.Sprintf("vals: %q", vals))
 
-	vals = tree.AllWithPrefix("f", 0)
-	assert.Equal(t, 4, len(vals), fmt.Sprintf("vals: %q", vals))
+	// vals = tree.AllWithPrefix("f", 0)
+	// assert.Equal(t, 4, len(vals), fmt.Sprintf("vals: %q", vals))
 
 	//	vals = tree.AllWithPrefix("fo", 0)
 	//	assert.Equal(t, 3, len(vals), fmt.Sprintf("vals: %q", vals))

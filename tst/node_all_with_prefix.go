@@ -1,11 +1,10 @@
 package tst
 
 func (root *node) AllWithPrefix(prefix string, limit int) []interface{} {
-	return root.allWithPrefix([]rune(prefix), limit, 0)
+	return root.allWithPrefix([]rune(prefix), limit)
 }
 
-func (n *node) allWithPrefix(runes []rune, limit, level int) (values []interface{}) {
-
+func (n *node) allWithPrefix(runes []rune, limit int) (values []interface{}) {
 	if n = n.get(runes); n != nil {
 		n.walk(limit, func(child *node) {
 			if child.end {

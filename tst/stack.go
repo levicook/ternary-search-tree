@@ -1,8 +1,8 @@
 package tst
 
 type stackElement struct {
-	next  *stackElement
-	value *node
+	next *stackElement
+	node *node
 }
 
 type stack struct {
@@ -12,11 +12,11 @@ type stack struct {
 func (s *stack) pop() *node {
 	el := s.head
 	s.head = el.next
-	return el.value
+	return el.node
 }
 
 func (s *stack) push(n *node) {
-	s.head = &stackElement{next: s.head, value: n}
+	s.head = &stackElement{next: s.head, node: n}
 }
 
 func (s stack) empty() bool {

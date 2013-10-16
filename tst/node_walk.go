@@ -1,13 +1,13 @@
 package tst
 
 func (root *node) walk(limit int, callback func(*node)) {
+	walked := 0
+
 	s := new(stack)
 	s.push(root)
 
 	for s.empty() {
 		n := s.pop()
-
-		callback(n)
 
 		if n.lo != nil {
 			s.push(n.lo)
@@ -19,6 +19,13 @@ func (root *node) walk(limit int, callback func(*node)) {
 
 		if n.hi != nil {
 			s.push(n.hi)
+		}
+
+		callback(n)
+		walked++
+
+		if limit > 0 && walked == limit {
+			break
 		}
 	}
 }
