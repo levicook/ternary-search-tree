@@ -8,7 +8,9 @@ func (root *node) Set(key string, val interface{}) {
 }
 
 func (n *node) set(runes []rune, val interface{}) {
-	for _, key := range runes {
+	for i, _ := range runes {
+		key := runes[i]
+
 		switch {
 		case key < n.Key:
 			if n.Lo == nil {
