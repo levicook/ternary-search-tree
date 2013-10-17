@@ -10,13 +10,13 @@ func (n *node) del(runes []rune) {
 	if n != nil && n.End {
 		n.End = false
 
-		if n.Lo == nil && n.Eq == nil && n.Hi == nil {
-			// this node can be deleted too
-			if n.Par.Lo == n {
+		if n.isLeaf() { // then it can be deleted too
+			switch {
+			case n.Par.Lo == n:
 				n.Par.Lo = nil
-			} else if n.Par.Eq == n {
+			case n.Par.Eq == n:
 				n.Par.Eq = nil
-			} else if n.Par.Hi == n {
+			case n.Par.Hi == n:
 				n.Par.Hi = nil
 			}
 		}
