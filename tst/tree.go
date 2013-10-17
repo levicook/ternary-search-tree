@@ -9,6 +9,5 @@ type Tree interface {
 }
 
 func New() Tree {
-	root := new(node)
-	return root
+	return new(node)
 }

@@ -6,7 +6,7 @@ func (root *node) walk(limit int, callback func(*node)) {
 	s := new(stack)
 	s.push(root)
 
-	for s.empty() {
+	for {
 		n := s.pop()
 
 		if n.lo != nil {
@@ -24,7 +24,7 @@ func (root *node) walk(limit int, callback func(*node)) {
 		callback(n)
 		walked++
 
-		if limit > 0 && walked == limit {
+		if s.empty() || limit > 0 && walked == limit {
 			break
 		}
 	}

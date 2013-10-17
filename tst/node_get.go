@@ -12,7 +12,6 @@ func (root *node) Get(key string) (val interface{}) {
 
 func (n *node) get(runes []rune) *node {
 	for _, key := range runes {
-
 		switch {
 		case key < n.key:
 			n = n.lo
@@ -25,6 +24,11 @@ func (n *node) get(runes []rune) *node {
 		if n == nil {
 			break
 		}
+	}
+
+	lastKey := runes[len(runes)-1]
+	if n != nil && n.key != lastKey {
+		n = nil
 	}
 
 	return n

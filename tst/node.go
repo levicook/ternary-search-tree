@@ -1,6 +1,8 @@
 package tst
 
 type node struct {
+	par *node
+
 	lo,
 	eq,
 	hi *node
