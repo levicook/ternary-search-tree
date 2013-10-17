@@ -1,14 +1,14 @@
 package tree
 
 type node struct {
-	par *node
+	Par *node
 
-	lo,
-	eq,
-	hi *node
+	Lo,
+	Eq,
+	Hi *node
 
-	key rune
-	val interface{}
+	Key rune
+	Val interface{}
 
-	end bool
+	End bool
 }

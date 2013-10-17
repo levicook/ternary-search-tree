@@ -12,29 +12,29 @@ func (n *node) set(runes []rune, level int, val interface{}) {
 
 	switch key := runes[level]; true {
 
-	case key < n.key:
-		if n.lo == nil {
-			n.lo = new(node)
-			n.lo.par = n
-			n.lo.key = key
+	case key < n.Key:
+		if n.Lo == nil {
+			n.Lo = new(node)
+			n.Lo.Par = n
+			n.Lo.Key = key
 		}
-		next = n.lo
+		next = n.Lo
 
-	case key > n.key:
-		if n.hi == nil {
-			n.hi = new(node)
-			n.hi.par = n
-			n.hi.key = key
+	case key > n.Key:
+		if n.Hi == nil {
+			n.Hi = new(node)
+			n.Hi.Par = n
+			n.Hi.Key = key
 		}
-		next = n.hi
+		next = n.Hi
 
-	case key == n.key:
-		if n.eq == nil {
-			n.eq = new(node)
-			n.eq.par = n
-			n.eq.key = key
+	case key == n.Key:
+		if n.Eq == nil {
+			n.Eq = new(node)
+			n.Eq.Par = n
+			n.Eq.Key = key
 		}
-		next = n.eq
+		next = n.Eq
 
 	}
 
@@ -42,7 +42,7 @@ func (n *node) set(runes []rune, level int, val interface{}) {
 	if len(runes) > nextLevel {
 		next.set(runes, nextLevel, val)
 	} else if len(runes) == nextLevel {
-		next.end = true
-		next.val = val
+		next.End = true
+		next.Val = val
 	}
 }

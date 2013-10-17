@@ -7,17 +7,17 @@ func (root *node) Delete(key string) {
 func (n *node) del(runes []rune) {
 	n = n.get(runes)
 
-	if n != nil && n.end {
-		n.end = false
+	if n != nil && n.End {
+		n.End = false
 
-		if n.lo == nil && n.eq == nil && n.hi == nil {
+		if n.Lo == nil && n.Eq == nil && n.Hi == nil {
 			// this node can be deleted too
-			if n.par.lo == n {
-				n.par.lo = nil
-			} else if n.par.eq == n {
-				n.par.eq = nil
-			} else if n.par.hi == n {
-				n.par.hi = nil
+			if n.Par.Lo == n {
+				n.Par.Lo = nil
+			} else if n.Par.Eq == n {
+				n.Par.Eq = nil
+			} else if n.Par.Hi == n {
+				n.Par.Hi = nil
 			}
 		}
 	}

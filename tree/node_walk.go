@@ -9,16 +9,16 @@ func (root *node) walk(limit int, callback func(*node)) {
 	for {
 		n := s.pop()
 
-		if n.lo != nil {
-			s.push(n.lo)
+		if n.Lo != nil {
+			s.push(n.Lo)
 		}
 
-		if n.eq != nil {
-			s.push(n.eq)
+		if n.Eq != nil {
+			s.push(n.Eq)
 		}
 
-		if n.hi != nil {
-			s.push(n.hi)
+		if n.Hi != nil {
+			s.push(n.Hi)
 		}
 
 		callback(n)
