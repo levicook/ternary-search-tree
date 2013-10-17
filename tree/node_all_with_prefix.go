@@ -1,4 +1,4 @@
-package tst
+package tree
 
 func (root *node) AllWithPrefix(prefix string, limit int) []interface{} {
 	return root.allWithPrefix([]rune(prefix), limit)

@@ -1,4 +1,4 @@
-package tst
+package tree
 
 type stackElement struct {
 	next *stackElement

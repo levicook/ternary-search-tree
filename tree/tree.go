@@ -1,4 +1,4 @@
-package tst
+package tree
 
 type Tree interface {
 	AllWithPrefix(prefix string, limit int) (values []interface{})

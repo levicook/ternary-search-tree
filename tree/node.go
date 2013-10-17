@@ -1,4 +1,4 @@
-package tst
+package tree
 
 type node struct {
 	par *node

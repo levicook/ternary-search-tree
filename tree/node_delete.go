@@ -1,4 +1,4 @@
-package tst
+package tree
 
 func (root *node) Delete(key string) {
 	root.del([]rune(key))

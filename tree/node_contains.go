@@ -1,4 +1,4 @@
-package tst
+package tree
 
 func (root *node) Contains(key string) bool {
 	return root.contains([]rune(key))

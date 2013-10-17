@@ -1,4 +1,4 @@
-package tst
+package tree
 
 func (root *node) Get(key string) (val interface{}) {
 	n := root.get([]rune(key))

@@ -1,4 +1,4 @@
-package tst
+package tree
 
 func (root *node) walk(limit int, callback func(*node)) {
 	walked := 0

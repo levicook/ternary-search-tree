@@ -1,4 +1,4 @@
-package tst
+package tree
 
 func (root *node) Set(key string, val interface{}) {
 	if val == nil {
