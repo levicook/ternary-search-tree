@@ -7,7 +7,3 @@ type Tree interface {
 	Get(key string) (val interface{})
 	Set(key string, val interface{})
 }
-
-func New() Tree {
-	return new(node)
-}

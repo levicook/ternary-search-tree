@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestNewNode(t *testing.T) {
+func Test_GeneralUsage(t *testing.T) {
 	T, F := true, false
 
 	tree := New()
